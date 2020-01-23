@@ -3,8 +3,17 @@
 exit 0;
 
 
+# Flush all chains and reset
+iptables -F
+iptables -X
+
 # Show iptables rule list with rule number
 iptables -L --line-numbers
+
+# Dropall packets by default
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT DROP
 
 # Block specific source ip address
 iptables -A INPUT -s 192.168.11.1/24 -J ACCEPT
