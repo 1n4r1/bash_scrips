@@ -18,5 +18,6 @@ $TTL 86400
 )
 @      IN NS server
 server IN A  192.168.10.2
-kali IN A  192.168.10.1
+@ IN A 192.168.10.1
+* IN A 192.168.10.1
 EOF
